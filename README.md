@@ -1,20 +1,47 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Blog Personal - Despliegue en Firebase Hosting
 
-# Run and deploy your AI Studio app
+Este proyecto es un blog personal construido con React, Vite y Firebase.
 
-This contains everything you need to run your app locally.
+## Pasos para desplegar en Firebase Hosting desde cualquier editor
 
-View your app in AI Studio: https://ai.studio/apps/19e2471f-e182-4efc-9459-7c6e8424ad42
+### 1. Instalar Firebase CLI
+Si no tienes Firebase CLI instalado, instálalo globalmente:
+```bash
+npm install -g firebase-tools
+```
 
-## Run Locally
+### 2. Iniciar sesión en Firebase
+Inicia sesión en tu cuenta de Firebase:
+```bash
+firebase login
+```
 
-**Prerequisites:**  Node.js
+### 3. Inicializar el proyecto (si no está hecho)
+Si el proyecto no está inicializado con Firebase, ejecuta:
+```bash
+firebase init
+```
+Selecciona "Hosting" y elige el proyecto existente o crea uno nuevo.
 
+### 4. Construir el proyecto
+Construye la aplicación para producción:
+```bash
+npm run build
+```
+Esto generará los archivos en la carpeta `dist`.
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+### 5. Desplegar a Firebase Hosting
+Despliega la aplicación:
+```bash
+firebase deploy --only hosting
+```
+
+### 6. Acceder al sitio
+Una vez desplegado, Firebase te dará la URL del sitio. También puedes ver el estado en la consola de Firebase.
+
+## Ejecutar localmente
+Para desarrollo local:
+```bash
+npm install
+npm run dev
+```
